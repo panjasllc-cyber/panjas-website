@@ -1401,48 +1401,54 @@
         Seller Fit Assessment
       </div>
       <h2 class="section-headline light" style="margin-bottom:0.75rem">Is the PANJAS Annuity Sale<br/>Right for You?</h2>
-      <p class="section-sub light" style="margin-bottom:2.5rem">Five questions. Two minutes. Get your personalized fit score and a tailored recommendation — no obligation, no broker, no pressure.</p>
+      <p class="section-sub light" style="margin-bottom:2.5rem">This short assessment helps us understand your situation — not to filter you, but to make sure we can give you an honest, useful perspective on whether the PANJAS model is genuinely the right fit. There are no wrong answers. It takes about two minutes.</p>
 
       <!-- Quiz Container -->
       <div id="quiz-container" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:2rem">
 
-        <!-- Q1 -->
+        <!-- Q1: Timeline -->
         <div class="quiz-question" id="qq1">
-          <div style="font-size:0.75rem;font-weight:700;color:var(--teal,#22aaaa);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.5rem">Question 1 of 5</div>
-          <div style="font-size:1.1rem;font-weight:600;color:#fff;margin-bottom:1.25rem">How soon are you looking to complete the sale of your business?</div>
+          <div style="font-size:0.75rem;font-weight:700;color:var(--teal,#22aaaa);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.5rem">Question 1 of 6</div>
+          <div style="font-size:1.1rem;font-weight:600;color:#fff;margin-bottom:1.25rem">How soon would you ideally like to complete the sale of your business?</div>
           <div class="quiz-options" style="display:flex;flex-direction:column;gap:0.75rem">
             <label class="quiz-opt" style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.15);border-radius:10px;cursor:pointer;transition:all 0.2s">
-              <input type="radio" name="q1" value="15" style="accent-color:var(--teal,#22aaaa)"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">Within 30–60 days</span>
+              <input type="radio" name="q1" value="15" style="accent-color:var(--teal,#22aaaa)"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">Within 30–90 days — I want to move quickly</span>
             </label>
             <label class="quiz-opt" style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.15);border-radius:10px;cursor:pointer;transition:all 0.2s">
-              <input type="radio" name="q1" value="10" style="accent-color:var(--teal,#22aaaa)"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">Within 3–6 months</span>
+              <input type="radio" name="q1" value="10" style="accent-color:var(--teal,#22aaaa)"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">Within 6 months</span>
             </label>
             <label class="quiz-opt" style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.15);border-radius:10px;cursor:pointer;transition:all 0.2s">
-              <input type="radio" name="q1" value="5" style="accent-color:var(--teal,#22aaaa)"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">Within 6–12 months</span>
+              <input type="radio" name="q1" value="6" style="accent-color:var(--teal,#22aaaa)"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">Within 12–24 months</span>
             </label>
             <label class="quiz-opt" style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.15);border-radius:10px;cursor:pointer;transition:all 0.2s">
-              <input type="radio" name="q1" value="2" style="accent-color:var(--teal,#22aaaa)"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">Just exploring options</span>
+              <input type="radio" name="q1" value="2" style="accent-color:var(--teal,#22aaaa)"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">I'm exploring options but have no firm timeline yet</span>
             </label>
           </div>
           <button onclick="quizNext(1)" style="margin-top:1.5rem;padding:0.75rem 2rem;background:var(--teal,#22aaaa);color:#fff;border:none;border-radius:8px;font-size:0.9rem;font-weight:700;cursor:pointer;letter-spacing:0.05em">NEXT &rarr;</button>
         </div>
 
-        <!-- Q2 -->
+        <!-- Q2: Trigger Event -->
         <div class="quiz-question" id="qq2" style="display:none">
-          <div style="font-size:0.75rem;font-weight:700;color:var(--teal,#22aaaa);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.5rem">Question 2 of 5</div>
-          <div style="font-size:1.1rem;font-weight:600;color:#fff;margin-bottom:1.25rem">Have you previously listed your business for sale with a broker or marketplace?</div>
+          <div style="font-size:0.75rem;font-weight:700;color:var(--teal,#22aaaa);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.5rem">Question 2 of 6</div>
+          <div style="font-size:1.1rem;font-weight:600;color:#fff;margin-bottom:1.25rem">What is the primary reason you're exploring a sale right now?</div>
           <div class="quiz-options" style="display:flex;flex-direction:column;gap:0.75rem">
             <label class="quiz-opt" style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.15);border-radius:10px;cursor:pointer;transition:all 0.2s">
-              <input type="radio" name="q2" value="15" style="accent-color:var(--teal,#22aaaa)"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">Yes — listed before but didn't sell</span>
+              <input type="radio" name="q2" value="12" style="accent-color:var(--teal,#22aaaa)"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">Retirement or stepping back from day-to-day operations</span>
             </label>
             <label class="quiz-opt" style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.15);border-radius:10px;cursor:pointer;transition:all 0.2s">
-              <input type="radio" name="q2" value="10" style="accent-color:var(--teal,#22aaaa)"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">Yes — currently listed, open to alternatives</span>
+              <input type="radio" name="q2" value="15" style="accent-color:var(--teal,#22aaaa)"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">Burnout, lifestyle change, or desire for more personal time</span>
             </label>
             <label class="quiz-opt" style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.15);border-radius:10px;cursor:pointer;transition:all 0.2s">
-              <input type="radio" name="q2" value="7" style="accent-color:var(--teal,#22aaaa)"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">No — first time considering a sale</span>
+              <input type="radio" name="q2" value="15" style="accent-color:var(--teal,#22aaaa)"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">Reimbursement pressure, regulatory burden, or staffing challenges</span>
             </label>
             <label class="quiz-opt" style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.15);border-radius:10px;cursor:pointer;transition:all 0.2s">
-              <input type="radio" name="q2" value="0" style="accent-color:var(--teal,#22aaaa)"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">No — I prefer to work with a broker</span>
+              <input type="radio" name="q2" value="10" style="accent-color:var(--teal,#22aaaa)"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">Partnership changes or organizational restructuring</span>
+            </label>
+            <label class="quiz-opt" style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.15);border-radius:10px;cursor:pointer;transition:all 0.2s">
+              <input type="radio" name="q2" value="12" style="accent-color:var(--teal,#22aaaa)"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">I want to capture the value I've built while the market is favorable</span>
+            </label>
+            <label class="quiz-opt" style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.15);border-radius:10px;cursor:pointer;transition:all 0.2s">
+              <input type="radio" name="q2" value="3" style="accent-color:var(--teal,#22aaaa)"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">Just exploring my options — no specific trigger yet</span>
             </label>
           </div>
           <div style="display:flex;gap:0.75rem;margin-top:1.5rem">
@@ -1451,22 +1457,25 @@
           </div>
         </div>
 
-        <!-- Q3 -->
+        <!-- Q3: Prior Sale Attempts -->
         <div class="quiz-question" id="qq3" style="display:none">
-          <div style="font-size:0.75rem;font-weight:700;color:var(--teal,#22aaaa);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.5rem">Question 3 of 5</div>
-          <div style="font-size:1.1rem;font-weight:600;color:#fff;margin-bottom:1.25rem">After selling, how important is it to have a steady monthly income from the sale proceeds?</div>
+          <div style="font-size:0.75rem;font-weight:700;color:var(--teal,#22aaaa);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.5rem">Question 3 of 6</div>
+          <div style="font-size:1.1rem;font-weight:600;color:#fff;margin-bottom:1.25rem">Have you previously attempted to sell your business?</div>
           <div class="quiz-options" style="display:flex;flex-direction:column;gap:0.75rem">
             <label class="quiz-opt" style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.15);border-radius:10px;cursor:pointer;transition:all 0.2s">
-              <input type="radio" name="q3" value="15" style="accent-color:var(--teal,#22aaaa)"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">Critical — it's my primary income source</span>
+              <input type="radio" name="q3" value="15" style="accent-color:var(--teal,#22aaaa)"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">Yes — I listed with a broker but it did not sell</span>
             </label>
             <label class="quiz-opt" style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.15);border-radius:10px;cursor:pointer;transition:all 0.2s">
-              <input type="radio" name="q3" value="10" style="accent-color:var(--teal,#22aaaa)"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">Important — I'd like consistent payments</span>
+              <input type="radio" name="q3" value="12" style="accent-color:var(--teal,#22aaaa)"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">Yes — I am currently listed but open to a better alternative</span>
             </label>
             <label class="quiz-opt" style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.15);border-radius:10px;cursor:pointer;transition:all 0.2s">
-              <input type="radio" name="q3" value="5" style="accent-color:var(--teal,#22aaaa)"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">Somewhat — I have other income sources</span>
+              <input type="radio" name="q3" value="10" style="accent-color:var(--teal,#22aaaa)"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">Yes — I have received unsolicited buyer interest before</span>
             </label>
             <label class="quiz-opt" style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.15);border-radius:10px;cursor:pointer;transition:all 0.2s">
-              <input type="radio" name="q3" value="2" style="accent-color:var(--teal,#22aaaa)"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">Not important — I prefer a lump sum</span>
+              <input type="radio" name="q3" value="8" style="accent-color:var(--teal,#22aaaa)"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">No — this is the first time I am seriously considering it</span>
+            </label>
+            <label class="quiz-opt" style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.15);border-radius:10px;cursor:pointer;transition:all 0.2s">
+              <input type="radio" name="q3" value="2" style="accent-color:var(--teal,#22aaaa)"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">No — I plan to work with a broker</span>
             </label>
           </div>
           <div style="display:flex;gap:0.75rem;margin-top:1.5rem">
@@ -1475,22 +1484,22 @@
           </div>
         </div>
 
-        <!-- Q4 -->
+        <!-- Q4: Proceeds Structure -->
         <div class="quiz-question" id="qq4" style="display:none">
-          <div style="font-size:0.75rem;font-weight:700;color:var(--teal,#22aaaa);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.5rem">Question 4 of 5</div>
-          <div style="font-size:1.1rem;font-weight:600;color:#fff;margin-bottom:1.25rem">How important is it that your employees, customers, and brand are protected after the sale?</div>
+          <div style="font-size:0.75rem;font-weight:700;color:var(--teal,#22aaaa);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.5rem">Question 4 of 6</div>
+          <div style="font-size:1.1rem;font-weight:600;color:#fff;margin-bottom:1.25rem">How would you prefer to receive the proceeds from a sale?</div>
           <div class="quiz-options" style="display:flex;flex-direction:column;gap:0.75rem">
             <label class="quiz-opt" style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.15);border-radius:10px;cursor:pointer;transition:all 0.2s">
-              <input type="radio" name="q4" value="15" style="accent-color:var(--teal,#22aaaa)"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">Extremely important — top priority</span>
+              <input type="radio" name="q4" value="5" style="accent-color:var(--teal,#22aaaa)"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">Mostly as an upfront lump-sum payment</span>
             </label>
             <label class="quiz-opt" style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.15);border-radius:10px;cursor:pointer;transition:all 0.2s">
-              <input type="radio" name="q4" value="10" style="accent-color:var(--teal,#22aaaa)"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">Important — I'd like assurances</span>
+              <input type="radio" name="q4" value="12" style="accent-color:var(--teal,#22aaaa)"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">A combination of upfront payment plus ongoing income over time</span>
             </label>
             <label class="quiz-opt" style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.15);border-radius:10px;cursor:pointer;transition:all 0.2s">
-              <input type="radio" name="q4" value="5" style="accent-color:var(--teal,#22aaaa)"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">Somewhat — I trust the buyer to handle it</span>
+              <input type="radio" name="q4" value="15" style="accent-color:var(--teal,#22aaaa)"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">Primarily as ongoing income spread over several years</span>
             </label>
             <label class="quiz-opt" style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.15);border-radius:10px;cursor:pointer;transition:all 0.2s">
-              <input type="radio" name="q4" value="2" style="accent-color:var(--teal,#22aaaa)"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">Not a concern</span>
+              <input type="radio" name="q4" value="10" style="accent-color:var(--teal,#22aaaa)"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">I am not sure yet — I would want to understand my options first</span>
             </label>
           </div>
           <div style="display:flex;gap:0.75rem;margin-top:1.5rem">
@@ -1499,26 +1508,54 @@
           </div>
         </div>
 
-        <!-- Q5 -->
+        <!-- Q5: Legacy & Continuity -->
         <div class="quiz-question" id="qq5" style="display:none">
-          <div style="font-size:0.75rem;font-weight:700;color:var(--teal,#22aaaa);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.5rem">Question 5 of 5</div>
-          <div style="font-size:1.1rem;font-weight:600;color:#fff;margin-bottom:1.25rem">Do you feel your business is currently valued at its true worth in today's market?</div>
+          <div style="font-size:0.75rem;font-weight:700;color:var(--teal,#22aaaa);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.5rem">Question 5 of 6</div>
+          <div style="font-size:1.1rem;font-weight:600;color:#fff;margin-bottom:1.25rem">How important is it that your staff, patients, and brand are protected after the sale?</div>
           <div class="quiz-options" style="display:flex;flex-direction:column;gap:0.75rem">
             <label class="quiz-opt" style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.15);border-radius:10px;cursor:pointer;transition:all 0.2s">
-              <input type="radio" name="q5" value="15" style="accent-color:var(--teal,#22aaaa)"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">No — I believe it's undervalued and I deserve more</span>
+              <input type="radio" name="q5" value="15" style="accent-color:var(--teal,#22aaaa)"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">Extremely important — it is my top priority</span>
             </label>
             <label class="quiz-opt" style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.15);border-radius:10px;cursor:pointer;transition:all 0.2s">
-              <input type="radio" name="q5" value="10" style="accent-color:var(--teal,#22aaaa)"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">Unsure — I haven't had a formal valuation</span>
+              <input type="radio" name="q5" value="12" style="accent-color:var(--teal,#22aaaa)"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">Important — I want meaningful assurances built into the deal</span>
             </label>
             <label class="quiz-opt" style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.15);border-radius:10px;cursor:pointer;transition:all 0.2s">
-              <input type="radio" name="q5" value="5" style="accent-color:var(--teal,#22aaaa)"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">Possibly — I've had one appraisal</span>
+              <input type="radio" name="q5" value="6" style="accent-color:var(--teal,#22aaaa)"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">Somewhat important — I trust the right buyer to handle it</span>
             </label>
             <label class="quiz-opt" style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.15);border-radius:10px;cursor:pointer;transition:all 0.2s">
-              <input type="radio" name="q5" value="2" style="accent-color:var(--teal,#22aaaa)"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">Yes — I'm confident in my current asking price</span>
+              <input type="radio" name="q5" value="2" style="accent-color:var(--teal,#22aaaa)"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">Not a primary concern for me</span>
             </label>
           </div>
           <div style="display:flex;gap:0.75rem;margin-top:1.5rem">
             <button onclick="quizBack(5)" style="padding:0.75rem 1.5rem;background:transparent;color:rgba(255,255,255,0.5);border:1px solid rgba(255,255,255,0.2);border-radius:8px;font-size:0.9rem;cursor:pointer">&larr; Back</button>
+            <button onclick="quizNext(5)" style="padding:0.75rem 2rem;background:var(--teal,#22aaaa);color:#fff;border:none;border-radius:8px;font-size:0.9rem;font-weight:700;cursor:pointer;letter-spacing:0.05em">NEXT &rarr;</button>
+          </div>
+        </div>
+
+        <!-- Q6: Revenue Range -->
+        <div class="quiz-question" id="qq6" style="display:none">
+          <div style="font-size:0.75rem;font-weight:700;color:var(--teal,#22aaaa);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.5rem">Question 6 of 6</div>
+          <div style="font-size:1.1rem;font-weight:600;color:#fff;margin-bottom:0.5rem">To help us understand whether our model is the right fit for your situation, which range best describes your business's annual revenue?</div>
+          <div style="font-size:0.82rem;color:rgba(255,255,255,0.45);margin-bottom:1.25rem">This helps us tailor our response to your specific situation.</div>
+          <div class="quiz-options" style="display:flex;flex-direction:column;gap:0.75rem">
+            <label class="quiz-opt" style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.15);border-radius:10px;cursor:pointer;transition:all 0.2s">
+              <input type="radio" name="q6" value="0" style="accent-color:var(--teal,#22aaaa)"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">Under $500K</span>
+            </label>
+            <label class="quiz-opt" style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.15);border-radius:10px;cursor:pointer;transition:all 0.2s">
+              <input type="radio" name="q6" value="5" style="accent-color:var(--teal,#22aaaa)"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">$500K to $1M</span>
+            </label>
+            <label class="quiz-opt" style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.15);border-radius:10px;cursor:pointer;transition:all 0.2s">
+              <input type="radio" name="q6" value="15" style="accent-color:var(--teal,#22aaaa)"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">$1M to $3M</span>
+            </label>
+            <label class="quiz-opt" style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.15);border-radius:10px;cursor:pointer;transition:all 0.2s">
+              <input type="radio" name="q6" value="15" style="accent-color:var(--teal,#22aaaa)"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">$3M to $10M</span>
+            </label>
+            <label class="quiz-opt" style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.15);border-radius:10px;cursor:pointer;transition:all 0.2s">
+              <input type="radio" name="q6" value="8" style="accent-color:var(--teal,#22aaaa)"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">Over $10M</span>
+            </label>
+          </div>
+          <div style="display:flex;gap:0.75rem;margin-top:1.5rem">
+            <button onclick="quizBack(6)" style="padding:0.75rem 1.5rem;background:transparent;color:rgba(255,255,255,0.5);border:1px solid rgba(255,255,255,0.2);border-radius:8px;font-size:0.9rem;cursor:pointer">&larr; Back</button>
             <button onclick="quizSubmit()" style="padding:0.75rem 2rem;background:var(--gold,#b8960c);color:#fff;border:none;border-radius:8px;font-size:0.9rem;font-weight:700;cursor:pointer;letter-spacing:0.05em">SEE MY RESULTS &rarr;</button>
           </div>
         </div>
@@ -1528,7 +1565,7 @@
           <div style="font-size:0.75rem;font-weight:700;color:var(--teal,#22aaaa);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:1rem">Your Annuity Fit Score</div>
           <div id="quiz-score-circle" style="width:120px;height:120px;border-radius:50%;border:4px solid var(--teal,#22aaaa);display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;flex-direction:column">
             <div id="quiz-score-num" style="font-size:2.5rem;font-weight:800;color:#fff">0</div>
-            <div style="font-size:0.7rem;color:rgba(255,255,255,0.5);margin-top:-4px">out of 75</div>
+            <div style="font-size:0.7rem;color:rgba(255,255,255,0.5);margin-top:-4px">out of 82</div>
           </div>
           <div id="quiz-score-label" style="font-size:1.2rem;font-weight:700;color:#fff;margin-bottom:0.75rem"></div>
           <div id="quiz-score-desc" style="font-size:0.93rem;color:rgba(255,255,255,0.7);line-height:1.7;max-width:520px;margin:0 auto 2rem"></div>
@@ -1555,32 +1592,32 @@
       document.getElementById('qq' + (q - 1)).style.display = 'block';
     }
     function quizSubmit() {
-      const sel = document.querySelector('input[name="q5"]:checked');
+      const sel = document.querySelector('input[name="q6"]:checked');
       if (!sel) { alert('Please select an answer to continue.'); return; }
       let total = 0;
-      for (let i = 1; i <= 5; i++) {
+      for (let i = 1; i <= 6; i++) {
         const v = document.querySelector('input[name="q' + i + '"]:checked');
         if (v) total += parseInt(v.value);
       }
-      document.getElementById('qq5').style.display = 'none';
+      document.getElementById('qq6').style.display = 'none';
       const results = document.getElementById('quiz-results');
       results.style.display = 'block';
       document.getElementById('quiz-score-num').textContent = total;
       let label, desc, color;
-      if (total >= 60) {
-        label = '\u2705 Excellent Fit';
-        desc = 'You are an ideal candidate for the PANJAS Annuity Sale. Your situation aligns perfectly with our model — a guaranteed close, premium valuation, income continuity, and legacy protection. Let\'s talk.';
+      if (total >= 65) {
+        label = '\u2705 Exceptional Fit';
+        desc = 'You are an ideal candidate for the PANJAS Annuity Sale. Your situation aligns closely with our model — a guaranteed close, premium valuation, income continuity, and legacy protection built in. Let\'s talk.';
         color = '#22c55e';
-      } else if (total >= 40) {
-        label = '\u26a1 Good Fit';
+      } else if (total >= 48) {
+        label = '\u26a1 Strong Fit';
         desc = 'The PANJAS structure could work very well for you. Based on your answers, we can customize our approach around your most important priorities. A short conversation will clarify everything.';
         color = '#f59e0b';
-      } else if (total >= 20) {
+      } else if (total >= 30) {
         label = '\ud83d\udca1 Possible Fit';
-        desc = 'There may be a path forward with a hybrid structure. Let\'s explore your options together — no obligation, no pressure. You may be closer to the right fit than you think.';
+        desc = 'There may be a path forward — possibly with a hybrid structure. Let\'s explore your options together, no obligation, no pressure. You may be closer to the right fit than you think.';
         color = '#60a5fa';
       } else {
-        label = '\ud83e\udd14 Low Fit — Let\'s Talk Anyway';
+        label = '\ud83e\udd14 Let\'s Talk Anyway';
         desc = 'A traditional sale may be the right path for your situation. We can still help you think through your options and connect you with the right resources — at no cost to you.';
         color = 'rgba(255,255,255,0.5)';
       }
@@ -1590,7 +1627,7 @@
       document.getElementById('quiz-score-num').style.color = color;
     }
     function quizReset() {
-      for (let i = 1; i <= 5; i++) {
+      for (let i = 1; i <= 6; i++) {
         const inputs = document.querySelectorAll('input[name="q' + i + '"]');
         inputs.forEach(function(inp) { inp.checked = false; });
         if (i > 1) document.getElementById('qq' + i).style.display = 'none';
