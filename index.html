@@ -495,6 +495,25 @@
       position: relative;
     }
 
+    .focus-img-overlay {
+      position: absolute;
+      bottom: 16px;
+      left: 16px;
+      background: rgba(10,22,40,0.82);
+      border-left: 3px solid var(--teal,#22aaaa);
+      padding: 0.55rem 1rem;
+      border-radius: 0 8px 8px 0;
+      z-index: 3;
+    }
+
+    .focus-img-overlay span {
+      color: #fff;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
     .focus-img-main {
       width: 100%;
       height: 420px;
@@ -1126,7 +1145,8 @@
     <div class="section-inner">
       <div class="focus-grid">
         <div class="focus-image-stack fade-up">
-          <img src="assets/images/healthcare_pe.jpg" alt="Healthcare business acquisitions" class="focus-img-main" />
+          <img src="assets/images/healthcare_physician_led.jpg" alt="Physician-led healthcare acquisitions" class="focus-img-main" />
+          <div class="focus-img-overlay"><span>Physician-Led Acquisitions</span></div>
           <img src="assets/images/healthcare_business.jpg" alt="Healthcare professionals" class="focus-img-accent" />
         </div>
         <div class="fade-up" style="transition-delay:0.2s">
@@ -1412,13 +1432,19 @@
           <div style="font-size:1.1rem;font-weight:600;color:#fff;margin-bottom:1.25rem">How soon would you ideally like to complete the sale of your business?</div>
           <div class="quiz-options" style="display:flex;flex-direction:column;gap:0.75rem">
             <label class="quiz-opt" style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.15);border-radius:10px;cursor:pointer;transition:all 0.2s">
-              <input type="radio" name="q1" value="15" style="accent-color:var(--teal,#22aaaa)"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">Within 30–90 days — I want to move quickly</span>
+              <input type="radio" name="q1" value="15" style="accent-color:var(--teal,#22aaaa)"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">Under 30 days — I need to move immediately</span>
             </label>
             <label class="quiz-opt" style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.15);border-radius:10px;cursor:pointer;transition:all 0.2s">
-              <input type="radio" name="q1" value="10" style="accent-color:var(--teal,#22aaaa)"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">Within 6 months</span>
+              <input type="radio" name="q1" value="14" style="accent-color:var(--teal,#22aaaa)"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">30–90 days — I want to move quickly</span>
             </label>
             <label class="quiz-opt" style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.15);border-radius:10px;cursor:pointer;transition:all 0.2s">
-              <input type="radio" name="q1" value="6" style="accent-color:var(--teal,#22aaaa)"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">Within 12–24 months</span>
+              <input type="radio" name="q1" value="11" style="accent-color:var(--teal,#22aaaa)"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">3–6 months</span>
+            </label>
+            <label class="quiz-opt" style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.15);border-radius:10px;cursor:pointer;transition:all 0.2s">
+              <input type="radio" name="q1" value="8" style="accent-color:var(--teal,#22aaaa)"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">6–12 months</span>
+            </label>
+            <label class="quiz-opt" style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.15);border-radius:10px;cursor:pointer;transition:all 0.2s">
+              <input type="radio" name="q1" value="5" style="accent-color:var(--teal,#22aaaa)"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">12–24 months</span>
             </label>
             <label class="quiz-opt" style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.15);border-radius:10px;cursor:pointer;transition:all 0.2s">
               <input type="radio" name="q1" value="2" style="accent-color:var(--teal,#22aaaa)"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">I'm exploring options but have no firm timeline yet</span>
@@ -1427,60 +1453,68 @@
           <button onclick="quizNext(1)" style="margin-top:1.5rem;padding:0.75rem 2rem;background:var(--teal,#22aaaa);color:#fff;border:none;border-radius:8px;font-size:0.9rem;font-weight:700;cursor:pointer;letter-spacing:0.05em">NEXT &rarr;</button>
         </div>
 
-        <!-- Q2: Trigger Event -->
+        <!-- Q2: Trigger Event (multi-select) -->
         <div class="quiz-question" id="qq2" style="display:none">
           <div style="font-size:0.75rem;font-weight:700;color:var(--teal,#22aaaa);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.5rem">Question 2 of 6</div>
-          <div style="font-size:1.1rem;font-weight:600;color:#fff;margin-bottom:1.25rem">What is the primary reason you're exploring a sale right now?</div>
+          <div style="font-size:1.1rem;font-weight:600;color:#fff;margin-bottom:0.4rem">What is driving your interest in selling? <span style="font-weight:400;color:rgba(255,255,255,0.5);font-size:0.85rem">(Select all that apply)</span></div>
+          <div style="font-size:0.8rem;color:rgba(255,255,255,0.4);margin-bottom:1.25rem">You may choose more than one.</div>
           <div class="quiz-options" style="display:flex;flex-direction:column;gap:0.75rem">
-            <label class="quiz-opt" style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.15);border-radius:10px;cursor:pointer;transition:all 0.2s">
-              <input type="radio" name="q2" value="12" style="accent-color:var(--teal,#22aaaa)"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">Retirement or stepping back from day-to-day operations</span>
+            <label class="quiz-opt quiz-check" style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.15);border-radius:10px;cursor:pointer;transition:all 0.2s">
+              <input type="checkbox" name="q2" value="12" style="accent-color:var(--teal,#22aaaa);width:16px;height:16px"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">Retirement or stepping back from day-to-day operations</span>
             </label>
-            <label class="quiz-opt" style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.15);border-radius:10px;cursor:pointer;transition:all 0.2s">
-              <input type="radio" name="q2" value="15" style="accent-color:var(--teal,#22aaaa)"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">Burnout, lifestyle change, or desire for more personal time</span>
+            <label class="quiz-opt quiz-check" style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.15);border-radius:10px;cursor:pointer;transition:all 0.2s">
+              <input type="checkbox" name="q2" value="15" style="accent-color:var(--teal,#22aaaa);width:16px;height:16px"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">Burnout, lifestyle change, or desire for more personal time</span>
             </label>
-            <label class="quiz-opt" style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.15);border-radius:10px;cursor:pointer;transition:all 0.2s">
-              <input type="radio" name="q2" value="15" style="accent-color:var(--teal,#22aaaa)"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">Reimbursement pressure, regulatory burden, or staffing challenges</span>
+            <label class="quiz-opt quiz-check" style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.15);border-radius:10px;cursor:pointer;transition:all 0.2s">
+              <input type="checkbox" name="q2" value="15" style="accent-color:var(--teal,#22aaaa);width:16px;height:16px"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">Reimbursement pressure, regulatory burden, or staffing challenges</span>
             </label>
-            <label class="quiz-opt" style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.15);border-radius:10px;cursor:pointer;transition:all 0.2s">
-              <input type="radio" name="q2" value="10" style="accent-color:var(--teal,#22aaaa)"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">Partnership changes or organizational restructuring</span>
+            <label class="quiz-opt quiz-check" style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.15);border-radius:10px;cursor:pointer;transition:all 0.2s">
+              <input type="checkbox" name="q2" value="14" style="accent-color:var(--teal,#22aaaa);width:16px;height:16px"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">Business is financially strapped or in need of a turnaround — and I don't want to do it</span>
             </label>
-            <label class="quiz-opt" style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.15);border-radius:10px;cursor:pointer;transition:all 0.2s">
-              <input type="radio" name="q2" value="12" style="accent-color:var(--teal,#22aaaa)"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">I want to capture the value I've built while the market is favorable</span>
+            <label class="quiz-opt quiz-check" style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.15);border-radius:10px;cursor:pointer;transition:all 0.2s">
+              <input type="checkbox" name="q2" value="10" style="accent-color:var(--teal,#22aaaa);width:16px;height:16px"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">Partnership changes or organizational restructuring</span>
             </label>
-            <label class="quiz-opt" style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.15);border-radius:10px;cursor:pointer;transition:all 0.2s">
-              <input type="radio" name="q2" value="3" style="accent-color:var(--teal,#22aaaa)"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">Just exploring my options — no specific trigger yet</span>
+            <label class="quiz-opt quiz-check" style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.15);border-radius:10px;cursor:pointer;transition:all 0.2s">
+              <input type="checkbox" name="q2" value="13" style="accent-color:var(--teal,#22aaaa);width:16px;height:16px"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">Personal health issues or a family health situation requiring my full attention</span>
+            </label>
+            <label class="quiz-opt quiz-check" style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.15);border-radius:10px;cursor:pointer;transition:all 0.2s">
+              <input type="checkbox" name="q2" value="12" style="accent-color:var(--teal,#22aaaa);width:16px;height:16px"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">I want to capture the value I've built while the market is favorable</span>
+            </label>
+            <label class="quiz-opt quiz-check" style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.15);border-radius:10px;cursor:pointer;transition:all 0.2s">
+              <input type="checkbox" name="q2" value="3" style="accent-color:var(--teal,#22aaaa);width:16px;height:16px"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">Just exploring my options — no specific trigger yet</span>
             </label>
           </div>
           <div style="display:flex;gap:0.75rem;margin-top:1.5rem">
             <button onclick="quizBack(2)" style="padding:0.75rem 1.5rem;background:transparent;color:rgba(255,255,255,0.5);border:1px solid rgba(255,255,255,0.2);border-radius:8px;font-size:0.9rem;cursor:pointer">&larr; Back</button>
-            <button onclick="quizNext(2)" style="padding:0.75rem 2rem;background:var(--teal,#22aaaa);color:#fff;border:none;border-radius:8px;font-size:0.9rem;font-weight:700;cursor:pointer;letter-spacing:0.05em">NEXT &rarr;</button>
+            <button onclick="quizNextCheck(2)" style="padding:0.75rem 2rem;background:var(--teal,#22aaaa);color:#fff;border:none;border-radius:8px;font-size:0.9rem;font-weight:700;cursor:pointer;letter-spacing:0.05em">NEXT &rarr;</button>
           </div>
         </div>
 
-        <!-- Q3: Prior Sale Attempts -->
+        <!-- Q3: Prior Sale Attempts (multi-select) -->
         <div class="quiz-question" id="qq3" style="display:none">
           <div style="font-size:0.75rem;font-weight:700;color:var(--teal,#22aaaa);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.5rem">Question 3 of 6</div>
-          <div style="font-size:1.1rem;font-weight:600;color:#fff;margin-bottom:1.25rem">Have you previously attempted to sell your business?</div>
+          <div style="font-size:1.1rem;font-weight:600;color:#fff;margin-bottom:0.4rem">Have you previously explored selling your business? <span style="font-weight:400;color:rgba(255,255,255,0.5);font-size:0.85rem">(Select all that apply)</span></div>
+          <div style="font-size:0.8rem;color:rgba(255,255,255,0.4);margin-bottom:1.25rem">You may choose more than one.</div>
           <div class="quiz-options" style="display:flex;flex-direction:column;gap:0.75rem">
-            <label class="quiz-opt" style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.15);border-radius:10px;cursor:pointer;transition:all 0.2s">
-              <input type="radio" name="q3" value="15" style="accent-color:var(--teal,#22aaaa)"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">Yes — I listed with a broker but it did not sell</span>
+            <label class="quiz-opt quiz-check" style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.15);border-radius:10px;cursor:pointer;transition:all 0.2s">
+              <input type="checkbox" name="q3" value="15" style="accent-color:var(--teal,#22aaaa);width:16px;height:16px"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">Yes — I listed with a broker but it did not sell</span>
             </label>
-            <label class="quiz-opt" style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.15);border-radius:10px;cursor:pointer;transition:all 0.2s">
-              <input type="radio" name="q3" value="12" style="accent-color:var(--teal,#22aaaa)"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">Yes — I am currently listed but open to a better alternative</span>
+            <label class="quiz-opt quiz-check" style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.15);border-radius:10px;cursor:pointer;transition:all 0.2s">
+              <input type="checkbox" name="q3" value="12" style="accent-color:var(--teal,#22aaaa);width:16px;height:16px"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">Yes — I am currently listed but open to a better alternative</span>
             </label>
-            <label class="quiz-opt" style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.15);border-radius:10px;cursor:pointer;transition:all 0.2s">
-              <input type="radio" name="q3" value="10" style="accent-color:var(--teal,#22aaaa)"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">Yes — I have received unsolicited buyer interest before</span>
+            <label class="quiz-opt quiz-check" style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.15);border-radius:10px;cursor:pointer;transition:all 0.2s">
+              <input type="checkbox" name="q3" value="10" style="accent-color:var(--teal,#22aaaa);width:16px;height:16px"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">Yes — I have received unsolicited buyer interest before</span>
             </label>
-            <label class="quiz-opt" style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.15);border-radius:10px;cursor:pointer;transition:all 0.2s">
-              <input type="radio" name="q3" value="8" style="accent-color:var(--teal,#22aaaa)"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">No — this is the first time I am seriously considering it</span>
+            <label class="quiz-opt quiz-check" style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.15);border-radius:10px;cursor:pointer;transition:all 0.2s">
+              <input type="checkbox" name="q3" value="8" style="accent-color:var(--teal,#22aaaa);width:16px;height:16px"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">No — this is the first time I am seriously considering it</span>
             </label>
-            <label class="quiz-opt" style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.15);border-radius:10px;cursor:pointer;transition:all 0.2s">
-              <input type="radio" name="q3" value="2" style="accent-color:var(--teal,#22aaaa)"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">No — I plan to work with a broker</span>
+            <label class="quiz-opt quiz-check" style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.15);border-radius:10px;cursor:pointer;transition:all 0.2s">
+              <input type="checkbox" name="q3" value="2" style="accent-color:var(--teal,#22aaaa);width:16px;height:16px"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">No — I plan to work with a broker</span>
             </label>
           </div>
           <div style="display:flex;gap:0.75rem;margin-top:1.5rem">
             <button onclick="quizBack(3)" style="padding:0.75rem 1.5rem;background:transparent;color:rgba(255,255,255,0.5);border:1px solid rgba(255,255,255,0.2);border-radius:8px;font-size:0.9rem;cursor:pointer">&larr; Back</button>
-            <button onclick="quizNext(3)" style="padding:0.75rem 2rem;background:var(--teal,#22aaaa);color:#fff;border:none;border-radius:8px;font-size:0.9rem;font-weight:700;cursor:pointer;letter-spacing:0.05em">NEXT &rarr;</button>
+            <button onclick="quizNextCheck(3)" style="padding:0.75rem 2rem;background:var(--teal,#22aaaa);color:#fff;border:none;border-radius:8px;font-size:0.9rem;font-weight:700;cursor:pointer;letter-spacing:0.05em">NEXT &rarr;</button>
           </div>
         </div>
 
@@ -1580,33 +1614,52 @@
   </section>
 
   <script>
-    // Quiz logic
+    // Quiz logic — supports radio (q1,q4,q5,q6) and multi-select checkbox (q2,q3)
+    var multiSelectQuestions = [2, 3];
+
     function quizNext(q) {
-      const sel = document.querySelector('input[name="q' + q + '"]:checked');
+      var sel = document.querySelector('input[name="q' + q + '"]:checked');
       if (!sel) { alert('Please select an answer to continue.'); return; }
       document.getElementById('qq' + q).style.display = 'none';
       document.getElementById('qq' + (q + 1)).style.display = 'block';
     }
+
+    function quizNextCheck(q) {
+      var checked = document.querySelectorAll('input[name="q' + q + '"]:checked');
+      if (checked.length === 0) { alert('Please select at least one answer to continue.'); return; }
+      document.getElementById('qq' + q).style.display = 'none';
+      document.getElementById('qq' + (q + 1)).style.display = 'block';
+    }
+
     function quizBack(q) {
       document.getElementById('qq' + q).style.display = 'none';
       document.getElementById('qq' + (q - 1)).style.display = 'block';
     }
+
     function quizSubmit() {
-      const sel = document.querySelector('input[name="q6"]:checked');
+      var sel = document.querySelector('input[name="q6"]:checked');
       if (!sel) { alert('Please select an answer to continue.'); return; }
-      let total = 0;
-      for (let i = 1; i <= 6; i++) {
-        const v = document.querySelector('input[name="q' + i + '"]:checked');
+      var total = 0;
+      // Radio questions: q1, q4, q5, q6
+      [1, 4, 5, 6].forEach(function(i) {
+        var v = document.querySelector('input[name="q' + i + '"]:checked');
         if (v) total += parseInt(v.value);
-      }
+      });
+      // Multi-select questions: q2, q3 — cap each at 15 to prevent gaming
+      [2, 3].forEach(function(i) {
+        var checked = document.querySelectorAll('input[name="q' + i + '"]:checked');
+        var qTotal = 0;
+        checked.forEach(function(inp) { qTotal += parseInt(inp.value); });
+        total += Math.min(qTotal, 15);
+      });
       document.getElementById('qq6').style.display = 'none';
-      const results = document.getElementById('quiz-results');
+      var results = document.getElementById('quiz-results');
       results.style.display = 'block';
       document.getElementById('quiz-score-num').textContent = total;
-      let label, desc, color;
+      var label, desc, color;
       if (total >= 65) {
         label = '\u2705 Exceptional Fit';
-        desc = 'You are an ideal candidate for the PANJAS Annuity Sale. Your situation aligns closely with our model — a guaranteed close, premium valuation, income continuity, and legacy protection built in. Let\'s talk.';
+        desc = 'You are an ideal candidate for the PANJAS Annuity Sale. Your situation aligns closely with our model \u2014 a guaranteed close, premium valuation, income continuity, and legacy protection built in. Let\'s talk.';
         color = '#22c55e';
       } else if (total >= 48) {
         label = '\u26a1 Strong Fit';
@@ -1614,11 +1667,11 @@
         color = '#f59e0b';
       } else if (total >= 30) {
         label = '\ud83d\udca1 Possible Fit';
-        desc = 'There may be a path forward — possibly with a hybrid structure. Let\'s explore your options together, no obligation, no pressure. You may be closer to the right fit than you think.';
+        desc = 'There may be a path forward \u2014 possibly with a hybrid structure. Let\'s explore your options together, no obligation, no pressure. You may be closer to the right fit than you think.';
         color = '#60a5fa';
       } else {
         label = '\ud83e\udd14 Let\'s Talk Anyway';
-        desc = 'A traditional sale may be the right path for your situation. We can still help you think through your options and connect you with the right resources — at no cost to you.';
+        desc = 'A traditional sale may be the right path for your situation. We can still help you think through your options and connect you with the right resources \u2014 at no cost to you.';
         color = 'rgba(255,255,255,0.5)';
       }
       document.getElementById('quiz-score-label').textContent = label;
@@ -1626,25 +1679,211 @@
       document.getElementById('quiz-score-circle').style.borderColor = color;
       document.getElementById('quiz-score-num').style.color = color;
     }
+
     function quizReset() {
-      for (let i = 1; i <= 6; i++) {
-        const inputs = document.querySelectorAll('input[name="q' + i + '"]');
-        inputs.forEach(function(inp) { inp.checked = false; });
+      for (var i = 1; i <= 6; i++) {
+        var inputs = document.querySelectorAll('input[name="q' + i + '"]');
+        inputs.forEach(function(inp) { inp.checked = false;
+          inp.closest('label').style.borderColor = 'rgba(255,255,255,0.15)';
+          inp.closest('label').style.background = 'transparent';
+        });
         if (i > 1) document.getElementById('qq' + i).style.display = 'none';
       }
       document.getElementById('qq1').style.display = 'block';
       document.getElementById('quiz-results').style.display = 'none';
     }
-    // Highlight selected option
+
+    // Highlight selected options (radio and checkbox)
     document.addEventListener('change', function(e) {
       if (e.target.type === 'radio') {
-        const group = document.querySelectorAll('input[name="' + e.target.name + '"]');
+        var group = document.querySelectorAll('input[name="' + e.target.name + '"]');
         group.forEach(function(inp) {
           inp.closest('label').style.borderColor = 'rgba(255,255,255,0.15)';
           inp.closest('label').style.background = 'transparent';
         });
         e.target.closest('label').style.borderColor = 'var(--teal,#22aaaa)';
         e.target.closest('label').style.background = 'rgba(34,170,170,0.08)';
+      } else if (e.target.type === 'checkbox') {
+        if (e.target.checked) {
+          e.target.closest('label').style.borderColor = 'var(--teal,#22aaaa)';
+          e.target.closest('label').style.background = 'rgba(34,170,170,0.08)';
+        } else {
+          e.target.closest('label').style.borderColor = 'rgba(255,255,255,0.15)';
+          e.target.closest('label').style.background = 'transparent';
+        }
+      }
+    });
+  </script>
+
+  <!-- ─── ALTERNATIVE PATH ─── -->
+  <section id="alternative-path" style="background:#0d1e38;padding:5rem 1.5rem;border-top:1px solid rgba(255,255,255,0.06)">
+    <div class="section-inner" style="max-width:760px;margin:0 auto">
+      <div class="section-label" style="color:var(--gold,#b8960c)">
+        <span style="background:var(--gold,#b8960c);width:24px;height:2px;display:inline-block"></span>
+        Not the Right Fit? Let's Still Help.
+      </div>
+      <h2 class="section-headline light" style="margin-bottom:0.75rem;font-size:1.6rem">The Annuity Sale Isn't for Everyone &mdash;<br/>But We Still Want to Help You Find the Right Path</h2>
+      <p style="color:rgba(255,255,255,0.6);font-size:0.9rem;line-height:1.75;margin-bottom:2.5rem">If our Annuity Sale model isn't the right fit for your situation, that doesn't mean we can't add value. Answer a few short questions below and we'll point you toward the right solution &mdash; whether that's a colleague, a different structure, or simply the right next step. No obligation, no pressure.</p>
+
+      <div id="alt-path-form" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:2rem">
+
+        <!-- Contact Info -->
+        <div id="ap-step-1">
+          <div style="font-size:0.75rem;font-weight:700;color:var(--gold,#b8960c);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.5rem">Step 1 of 4 &mdash; Your Contact Details</div>
+          <div style="font-size:1rem;font-weight:600;color:#fff;margin-bottom:1.25rem">How should we reach you?</div>
+          <div style="display:flex;flex-direction:column;gap:0.85rem">
+            <input id="ap-name" type="text" placeholder="Full Name" style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);border-radius:8px;padding:0.75rem 1rem;color:#fff;font-size:0.93rem;outline:none;width:100%;box-sizing:border-box" />
+            <input id="ap-email" type="email" placeholder="Email Address" style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);border-radius:8px;padding:0.75rem 1rem;color:#fff;font-size:0.93rem;outline:none;width:100%;box-sizing:border-box" />
+            <input id="ap-phone" type="tel" placeholder="Phone Number (optional)" style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);border-radius:8px;padding:0.75rem 1rem;color:#fff;font-size:0.93rem;outline:none;width:100%;box-sizing:border-box" />
+            <input id="ap-business" type="text" placeholder="Business Name &amp; Type (e.g., Primary Care Clinic)" style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);border-radius:8px;padding:0.75rem 1rem;color:#fff;font-size:0.93rem;outline:none;width:100%;box-sizing:border-box" />
+          </div>
+          <button onclick="apNext(1)" style="margin-top:1.5rem;padding:0.75rem 2rem;background:var(--gold,#b8960c);color:#fff;border:none;border-radius:8px;font-size:0.9rem;font-weight:700;cursor:pointer;letter-spacing:0.05em">NEXT &rarr;</button>
+        </div>
+
+        <!-- What they want -->
+        <div id="ap-step-2" style="display:none">
+          <div style="font-size:0.75rem;font-weight:700;color:var(--gold,#b8960c);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.5rem">Step 2 of 4 &mdash; Your Goals</div>
+          <div style="font-size:1rem;font-weight:600;color:#fff;margin-bottom:0.4rem">What outcome matters most to you? <span style="font-weight:400;color:rgba(255,255,255,0.5);font-size:0.85rem">(Select all that apply)</span></div>
+          <div style="font-size:0.8rem;color:rgba(255,255,255,0.4);margin-bottom:1.25rem">This helps us understand what you're really looking for.</div>
+          <div style="display:flex;flex-direction:column;gap:0.75rem">
+            <label style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.12);border-radius:10px;cursor:pointer;transition:all 0.2s" class="ap-check-opt">
+              <input type="checkbox" name="ap2" value="max_cash" style="accent-color:var(--gold,#b8960c);width:16px;height:16px"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">Maximize the cash I receive at closing</span>
+            </label>
+            <label style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.12);border-radius:10px;cursor:pointer;transition:all 0.2s" class="ap-check-opt">
+              <input type="checkbox" name="ap2" value="fast_exit" style="accent-color:var(--gold,#b8960c);width:16px;height:16px"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">Exit as quickly as possible</span>
+            </label>
+            <label style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.12);border-radius:10px;cursor:pointer;transition:all 0.2s" class="ap-check-opt">
+              <input type="checkbox" name="ap2" value="turnaround" style="accent-color:var(--gold,#b8960c);width:16px;height:16px"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">Get help turning the business around before selling</span>
+            </label>
+            <label style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.12);border-radius:10px;cursor:pointer;transition:all 0.2s" class="ap-check-opt">
+              <input type="checkbox" name="ap2" value="stay_involved" style="accent-color:var(--gold,#b8960c);width:16px;height:16px"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">Stay involved in the business after a deal (partial sale or equity role)</span>
+            </label>
+            <label style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.12);border-radius:10px;cursor:pointer;transition:all 0.2s" class="ap-check-opt">
+              <input type="checkbox" name="ap2" value="legacy" style="accent-color:var(--gold,#b8960c);width:16px;height:16px"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">Protect my staff, patients, and legacy above all else</span>
+            </label>
+            <label style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.12);border-radius:10px;cursor:pointer;transition:all 0.2s" class="ap-check-opt">
+              <input type="checkbox" name="ap2" value="explore" style="accent-color:var(--gold,#b8960c);width:16px;height:16px"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">I'm not sure yet &mdash; I just want to understand my options</span>
+            </label>
+          </div>
+          <div style="display:flex;gap:0.75rem;margin-top:1.5rem">
+            <button onclick="apBack(2)" style="padding:0.75rem 1.5rem;background:transparent;color:rgba(255,255,255,0.5);border:1px solid rgba(255,255,255,0.2);border-radius:8px;font-size:0.9rem;cursor:pointer">&larr; Back</button>
+            <button onclick="apNextCheck(2)" style="padding:0.75rem 2rem;background:var(--gold,#b8960c);color:#fff;border:none;border-radius:8px;font-size:0.9rem;font-weight:700;cursor:pointer;letter-spacing:0.05em">NEXT &rarr;</button>
+          </div>
+        </div>
+
+        <!-- Situation -->
+        <div id="ap-step-3" style="display:none">
+          <div style="font-size:0.75rem;font-weight:700;color:var(--gold,#b8960c);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.5rem">Step 3 of 4 &mdash; Your Situation</div>
+          <div style="font-size:1rem;font-weight:600;color:#fff;margin-bottom:0.4rem">What best describes your current situation? <span style="font-weight:400;color:rgba(255,255,255,0.5);font-size:0.85rem">(Select all that apply)</span></div>
+          <div style="font-size:0.8rem;color:rgba(255,255,255,0.4);margin-bottom:1.25rem">This helps us match you with the right path or resource.</div>
+          <div style="display:flex;flex-direction:column;gap:0.75rem">
+            <label style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.12);border-radius:10px;cursor:pointer;transition:all 0.2s" class="ap-check-opt">
+              <input type="checkbox" name="ap3" value="profitable" style="accent-color:var(--gold,#b8960c);width:16px;height:16px"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">My business is profitable and growing</span>
+            </label>
+            <label style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.12);border-radius:10px;cursor:pointer;transition:all 0.2s" class="ap-check-opt">
+              <input type="checkbox" name="ap3" value="flat" style="accent-color:var(--gold,#b8960c);width:16px;height:16px"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">Revenue is flat or declining</span>
+            </label>
+            <label style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.12);border-radius:10px;cursor:pointer;transition:all 0.2s" class="ap-check-opt">
+              <input type="checkbox" name="ap3" value="distressed" style="accent-color:var(--gold,#b8960c);width:16px;height:16px"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">The business is financially distressed or in turnaround</span>
+            </label>
+            <label style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.12);border-radius:10px;cursor:pointer;transition:all 0.2s" class="ap-check-opt">
+              <input type="checkbox" name="ap3" value="partner_dispute" style="accent-color:var(--gold,#b8960c);width:16px;height:16px"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">There is a partnership dispute or ownership conflict</span>
+            </label>
+            <label style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.12);border-radius:10px;cursor:pointer;transition:all 0.2s" class="ap-check-opt">
+              <input type="checkbox" name="ap3" value="health" style="accent-color:var(--gold,#b8960c);width:16px;height:16px"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">A personal health issue is driving the urgency</span>
+            </label>
+            <label style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.12);border-radius:10px;cursor:pointer;transition:all 0.2s" class="ap-check-opt">
+              <input type="checkbox" name="ap3" value="already_listed" style="accent-color:var(--gold,#b8960c);width:16px;height:16px"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">I am already listed with a broker and it hasn't sold</span>
+            </label>
+          </div>
+          <div style="display:flex;gap:0.75rem;margin-top:1.5rem">
+            <button onclick="apBack(3)" style="padding:0.75rem 1.5rem;background:transparent;color:rgba(255,255,255,0.5);border:1px solid rgba(255,255,255,0.2);border-radius:8px;font-size:0.9rem;cursor:pointer">&larr; Back</button>
+            <button onclick="apNextCheck(3)" style="padding:0.75rem 2rem;background:var(--gold,#b8960c);color:#fff;border:none;border-radius:8px;font-size:0.9rem;font-weight:700;cursor:pointer;letter-spacing:0.05em">NEXT &rarr;</button>
+          </div>
+        </div>
+
+        <!-- What's not ideal about the Annuity Sale -->
+        <div id="ap-step-4" style="display:none">
+          <div style="font-size:0.75rem;font-weight:700;color:var(--gold,#b8960c);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.5rem">Step 4 of 4 &mdash; Help Us Understand</div>
+          <div style="font-size:1rem;font-weight:600;color:#fff;margin-bottom:0.4rem">Which part of the PANJAS Annuity Sale is not the right fit for you? <span style="font-weight:400;color:rgba(255,255,255,0.5);font-size:0.85rem">(Select all that apply)</span></div>
+          <div style="font-size:0.8rem;color:rgba(255,255,255,0.4);margin-bottom:1.25rem">Your honest answer helps us direct you to the right resource &mdash; or improve our model.</div>
+          <div style="display:flex;flex-direction:column;gap:0.75rem">
+            <label style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.12);border-radius:10px;cursor:pointer;transition:all 0.2s" class="ap-check-opt">
+              <input type="checkbox" name="ap4" value="no_lump_sum" style="accent-color:var(--gold,#b8960c);width:16px;height:16px"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">I need a large lump-sum payment at closing, not spread over time</span>
+            </label>
+            <label style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.12);border-radius:10px;cursor:pointer;transition:all 0.2s" class="ap-check-opt">
+              <input type="checkbox" name="ap4" value="valuation" style="accent-color:var(--gold,#b8960c);width:16px;height:16px"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">I believe my business is worth more than your model would offer</span>
+            </label>
+            <label style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.12);border-radius:10px;cursor:pointer;transition:all 0.2s" class="ap-check-opt">
+              <input type="checkbox" name="ap4" value="trust" style="accent-color:var(--gold,#b8960c);width:16px;height:16px"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">I'm not comfortable with deferred payments &mdash; I want certainty now</span>
+            </label>
+            <label style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.12);border-radius:10px;cursor:pointer;transition:all 0.2s" class="ap-check-opt">
+              <input type="checkbox" name="ap4" value="timeline" style="accent-color:var(--gold,#b8960c);width:16px;height:16px"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">The 30-day timeline is too fast for my situation</span>
+            </label>
+            <label style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.12);border-radius:10px;cursor:pointer;transition:all 0.2s" class="ap-check-opt">
+              <input type="checkbox" name="ap4" value="want_broker" style="accent-color:var(--gold,#b8960c);width:16px;height:16px"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">I prefer to work with a traditional broker or investment banker</span>
+            </label>
+            <label style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.12);border-radius:10px;cursor:pointer;transition:all 0.2s" class="ap-check-opt">
+              <input type="checkbox" name="ap4" value="not_selling" style="accent-color:var(--gold,#b8960c);width:16px;height:16px"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">I'm not actually ready to sell &mdash; I was just exploring</span>
+            </label>
+            <label style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.12);border-radius:10px;cursor:pointer;transition:all 0.2s" class="ap-check-opt">
+              <input type="checkbox" name="ap4" value="other" style="accent-color:var(--gold,#b8960c);width:16px;height:16px"> <span style="color:rgba(255,255,255,0.85);font-size:0.93rem">Other reason (please describe below)</span>
+            </label>
+          </div>
+          <textarea id="ap-other-text" placeholder="Optional: share any additional context or questions..." style="margin-top:1rem;width:100%;box-sizing:border-box;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);border-radius:8px;padding:0.75rem 1rem;color:#fff;font-size:0.88rem;line-height:1.6;resize:vertical;min-height:80px;outline:none"></textarea>
+          <div style="display:flex;gap:0.75rem;margin-top:1.5rem">
+            <button onclick="apBack(4)" style="padding:0.75rem 1.5rem;background:transparent;color:rgba(255,255,255,0.5);border:1px solid rgba(255,255,255,0.2);border-radius:8px;font-size:0.9rem;cursor:pointer">&larr; Back</button>
+            <button onclick="apSubmit()" style="padding:0.75rem 2rem;background:var(--gold,#b8960c);color:#fff;border:none;border-radius:8px;font-size:0.9rem;font-weight:700;cursor:pointer;letter-spacing:0.05em">SUBMIT &rarr;</button>
+          </div>
+        </div>
+
+        <!-- Thank You -->
+        <div id="ap-thankyou" style="display:none;text-align:center;padding:1rem 0">
+          <div style="font-size:2rem;margin-bottom:1rem">&#128591;</div>
+          <div style="font-size:1.2rem;font-weight:700;color:#fff;margin-bottom:0.75rem">Thank You &mdash; We'll Be in Touch</div>
+          <div style="font-size:0.93rem;color:rgba(255,255,255,0.65);line-height:1.75;max-width:480px;margin:0 auto 1.5rem">We've received your information and will reach out personally within one business day. Even if the Annuity Sale isn't the right fit, we want to make sure you leave this conversation with a clear path forward.</div>
+          <a href="#schedule" style="display:inline-block;padding:0.75rem 2rem;background:rgba(255,255,255,0.08);color:#fff;border:1px solid rgba(255,255,255,0.2);border-radius:8px;font-size:0.88rem;font-weight:600;text-decoration:none">Schedule a Call Anyway &rarr;</a>
+        </div>
+
+      </div><!-- end alt-path-form -->
+    </div>
+  </section>
+
+  <script>
+    // Alternative Path form logic
+    function apNext(step) {
+      var name = document.getElementById('ap-name').value.trim();
+      var email = document.getElementById('ap-email').value.trim();
+      if (!name || !email) { alert('Please enter your name and email to continue.'); return; }
+      document.getElementById('ap-step-' + step).style.display = 'none';
+      document.getElementById('ap-step-' + (step + 1)).style.display = 'block';
+    }
+    function apNextCheck(step) {
+      var checked = document.querySelectorAll('input[name="ap' + step + '"]:checked');
+      if (checked.length === 0) { alert('Please select at least one option to continue.'); return; }
+      document.getElementById('ap-step-' + step).style.display = 'none';
+      document.getElementById('ap-step-' + (step + 1)).style.display = 'block';
+    }
+    function apBack(step) {
+      document.getElementById('ap-step-' + step).style.display = 'none';
+      document.getElementById('ap-step-' + (step - 1)).style.display = 'block';
+    }
+    function apSubmit() {
+      var checked = document.querySelectorAll('input[name="ap4"]:checked');
+      if (checked.length === 0) { alert('Please select at least one option.'); return; }
+      document.getElementById('ap-step-4').style.display = 'none';
+      document.getElementById('ap-thankyou').style.display = 'block';
+    }
+    // Highlight checkbox options in alt path form
+    document.addEventListener('change', function(e) {
+      if (e.target.closest('.ap-check-opt')) {
+        if (e.target.checked) {
+          e.target.closest('label').style.borderColor = 'var(--gold,#b8960c)';
+          e.target.closest('label').style.background = 'rgba(184,150,12,0.08)';
+        } else {
+          e.target.closest('label').style.borderColor = 'rgba(255,255,255,0.12)';
+          e.target.closest('label').style.background = 'transparent';
+        }
       }
     });
   </script>
