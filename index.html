@@ -1,0 +1,1437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PANJAS Equity Holding | Healthcare Business Acquisitions</title>
+  <meta name="description" content="PANJAS Equity Holding acquires healthcare businesses through a streamlined 30-day annuity sale process — no broker commissions, no invasive diligence, maximum value." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet" />
+  <!-- Calendly widget -->
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0D1B2A;
+      --navy-mid: #162436;
+      --navy-light: #1E3148;
+      --teal: #1A8C8C;
+      --teal-light: #22AAAA;
+      --gold: #C9A84C;
+      --gold-light: #E2C06A;
+      --bg-light: #F4F7FA;
+      --bg-white: #FFFFFF;
+      --text-dark: #1C1C1E;
+      --text-mid: #4A5568;
+      --text-light: #718096;
+      --border: #E2E8F0;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text-dark);
+      background: var(--bg-white);
+      line-height: 1.6;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(13, 27, 42, 0.97);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+      padding: 0 2rem;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .nav-logo-mark {
+      width: 42px;
+      height: 42px;
+      background: linear-gradient(135deg, var(--teal), var(--teal-light));
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      font-size: 1.1rem;
+      color: white;
+      letter-spacing: -1px;
+    }
+
+    .nav-brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .nav-brand-name {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: white;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .nav-brand-sub {
+      font-size: 0.65rem;
+      color: var(--gold);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--gold); }
+
+    .nav-cta {
+      background: var(--teal) !important;
+      color: white !important;
+      padding: 0.5rem 1.25rem;
+      border-radius: 6px;
+      font-weight: 600 !important;
+      transition: background 0.2s !important;
+    }
+
+    .nav-cta:hover { background: var(--teal-light) !important; }
+
+    /* ─── HERO ─── */
+    #hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 50%, #0A2540 100%);
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding-top: 70px;
+    }
+
+    .hero-bg-pattern {
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 20% 50%, rgba(26, 140, 140, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(201, 168, 76, 0.06) 0%, transparent 40%),
+        radial-gradient(circle at 60% 80%, rgba(26, 140, 140, 0.05) 0%, transparent 40%);
+    }
+
+    .hero-grid-overlay {
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(rgba(26,140,140,0.04) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(26,140,140,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .hero-label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .hero-label::before {
+      content: '';
+      display: block;
+      width: 32px;
+      height: 2px;
+      background: var(--gold);
+    }
+
+    .hero-headline {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 4vw, 3.5rem);
+      font-weight: 700;
+      color: white;
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-headline span {
+      color: var(--teal-light);
+    }
+
+    .hero-sub {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+      max-width: 520px;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--teal);
+      color: white;
+      padding: 0.9rem 2rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.2s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary:hover {
+      background: var(--teal-light);
+      transform: translateY(-1px);
+      box-shadow: 0 8px 24px rgba(26,140,140,0.35);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: white;
+      padding: 0.9rem 2rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.2s;
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    .hero-image-panel {
+      position: relative;
+    }
+
+    .hero-image-frame {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 32px 80px rgba(0,0,0,0.5);
+    }
+
+    .hero-image-frame img {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hero-image-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(13,27,42,0.6) 0%, transparent 50%);
+    }
+
+    .hero-stat-card {
+      position: absolute;
+      background: white;
+      border-radius: 12px;
+      padding: 1rem 1.25rem;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.3);
+    }
+
+    .hero-stat-card.top-left {
+      top: -20px;
+      left: -30px;
+    }
+
+    .hero-stat-card.bottom-right {
+      bottom: 30px;
+      right: -30px;
+    }
+
+    .hero-stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--teal);
+      line-height: 1;
+    }
+
+    .hero-stat-label {
+      font-size: 0.72rem;
+      color: var(--text-mid);
+      font-weight: 500;
+      margin-top: 2px;
+    }
+
+    /* ─── STATS BANNER ─── */
+    #stats-banner {
+      background: var(--navy);
+      padding: 3rem 2rem;
+      border-top: 1px solid rgba(201,168,76,0.2);
+      border-bottom: 1px solid rgba(201,168,76,0.2);
+    }
+
+    .stats-grid {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      text-align: center;
+    }
+
+    .stat-item {}
+
+    .stat-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .stat-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: white;
+      margin: 0.5rem 0 0.25rem;
+    }
+
+    .stat-desc {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.55);
+    }
+
+    /* ─── SECTIONS ─── */
+    section {
+      padding: 6rem 2rem;
+    }
+
+    .section-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .section-label::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--teal);
+    }
+
+    .section-headline {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3vw, 2.75rem);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .section-headline.light { color: white; }
+
+    .section-sub {
+      font-size: 1.05rem;
+      color: var(--text-mid);
+      max-width: 600px;
+      line-height: 1.7;
+      margin-bottom: 3rem;
+    }
+
+    .section-sub.light { color: rgba(255,255,255,0.7); }
+
+    /* ─── OPPORTUNITY SECTION ─── */
+    #opportunity { background: var(--bg-light); }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .benefit-card {
+      background: white;
+      border-radius: 14px;
+      padding: 2rem;
+      border: 1px solid var(--border);
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .benefit-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--teal), var(--teal-light));
+      transform: scaleX(0);
+      transition: transform 0.3s;
+    }
+
+    .benefit-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.1);
+      border-color: var(--teal);
+    }
+
+    .benefit-card:hover::before { transform: scaleX(1); }
+
+    .benefit-icon {
+      width: 52px;
+      height: 52px;
+      background: linear-gradient(135deg, rgba(26,140,140,0.12), rgba(26,140,140,0.06));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .benefit-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.75rem;
+    }
+
+    .benefit-desc {
+      font-size: 0.9rem;
+      color: var(--text-mid);
+      line-height: 1.65;
+    }
+
+    /* ─── HEALTHCARE FOCUS ─── */
+    #healthcare-focus {
+      background: var(--navy);
+      position: relative;
+      overflow: hidden;
+    }
+
+    #healthcare-focus::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 70% 50%, rgba(26,140,140,0.1) 0%, transparent 60%);
+    }
+
+    .focus-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .focus-image-stack {
+      position: relative;
+    }
+
+    .focus-img-main {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      border-radius: 16px;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.4);
+    }
+
+    .focus-img-accent {
+      position: absolute;
+      bottom: -30px;
+      right: -30px;
+      width: 200px;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 4px solid var(--navy);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.4);
+    }
+
+    .focus-sectors {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 2rem;
+    }
+
+    .sector-tag {
+      background: rgba(26,140,140,0.15);
+      border: 1px solid rgba(26,140,140,0.3);
+      color: var(--teal-light);
+      padding: 0.4rem 1rem;
+      border-radius: 100px;
+      font-size: 0.82rem;
+      font-weight: 500;
+    }
+
+    /* ─── COMPARISON ─── */
+    #comparison { background: white; }
+
+    .compare-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .compare-card {
+      border-radius: 16px;
+      padding: 2.5rem;
+      position: relative;
+    }
+
+    .compare-card.traditional {
+      background: #FFF5F5;
+      border: 1px solid #FED7D7;
+    }
+
+    .compare-card.panjas {
+      background: linear-gradient(135deg, var(--navy), var(--navy-mid));
+      border: 1px solid rgba(26,140,140,0.3);
+    }
+
+    .compare-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 1rem;
+      border-radius: 100px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 1.5rem;
+    }
+
+    .compare-badge.bad {
+      background: #FED7D7;
+      color: #C53030;
+    }
+
+    .compare-badge.good {
+      background: rgba(26,140,140,0.2);
+      color: var(--teal-light);
+    }
+
+    .compare-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+
+    .compare-card.traditional .compare-title { color: #742A2A; }
+    .compare-card.panjas .compare-title { color: white; }
+
+    .compare-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .compare-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .compare-card.traditional .compare-list li { color: #742A2A; }
+    .compare-card.panjas .compare-list li { color: rgba(255,255,255,0.85); }
+
+    .compare-icon {
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      margin-top: 1px;
+    }
+
+    .compare-card.traditional .compare-icon {
+      background: #FEB2B2;
+      color: #C53030;
+    }
+
+    .compare-card.panjas .compare-icon {
+      background: rgba(26,140,140,0.3);
+      color: var(--teal-light);
+    }
+
+    /* ─── ABOUT ─── */
+    #about { background: var(--bg-light); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 380px 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .about-photo-frame {
+      position: relative;
+    }
+
+    .about-photo-frame img {
+      width: 100%;
+      border-radius: 16px;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.15);
+      display: block;
+    }
+
+    .about-credential-bar {
+      position: absolute;
+      bottom: -20px;
+      left: 20px;
+      right: 20px;
+      background: var(--navy);
+      border-radius: 10px;
+      padding: 1rem 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .about-credential-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--teal);
+      flex-shrink: 0;
+    }
+
+    .about-credential-text {
+      font-size: 0.78rem;
+      color: white;
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    .about-credential-text strong {
+      color: var(--gold);
+      display: block;
+      font-size: 0.85rem;
+    }
+
+    .about-content { padding-top: 1rem; }
+
+    .about-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.25rem;
+    }
+
+    .about-title-line {
+      font-size: 0.9rem;
+      color: var(--teal);
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    .about-bio {
+      font-size: 0.97rem;
+      color: var(--text-mid);
+      line-height: 1.75;
+      margin-bottom: 1.5rem;
+    }
+
+    .about-creds {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 2rem;
+    }
+
+    .cred-badge {
+      background: white;
+      border: 1px solid var(--border);
+      color: var(--navy);
+      padding: 0.35rem 0.85rem;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .about-links {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .linkedin-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #0077B5;
+      color: white;
+      padding: 0.6rem 1.25rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+
+    .linkedin-btn:hover {
+      background: #005885;
+      transform: translateY(-1px);
+    }
+
+    /* ─── SEEKING ─── */
+    #seeking { background: white; }
+
+    .seeking-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .seeking-card {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.75rem;
+      transition: all 0.3s;
+    }
+
+    .seeking-card:hover {
+      border-color: var(--teal);
+      box-shadow: 0 8px 24px rgba(26,140,140,0.1);
+    }
+
+    .seeking-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .seeking-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--navy);
+      margin-bottom: 0.5rem;
+    }
+
+    .seeking-desc {
+      font-size: 0.88rem;
+      color: var(--text-mid);
+      line-height: 1.6;
+    }
+
+    .seeking-highlight {
+      background: linear-gradient(135deg, var(--navy), var(--navy-mid));
+      border-radius: 16px;
+      padding: 2.5rem;
+      margin-top: 2.5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 2rem;
+      text-align: center;
+    }
+
+    .sh-item {}
+
+    .sh-value {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--gold);
+    }
+
+    .sh-label {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.65);
+      margin-top: 0.25rem;
+    }
+
+    /* ─── SCHEDULE ─── */
+    #schedule {
+      background: linear-gradient(135deg, var(--navy) 0%, #0A2540 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    #schedule::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 30% 50%, rgba(26,140,140,0.12) 0%, transparent 60%);
+    }
+
+    .schedule-inner {
+      position: relative;
+      z-index: 2;
+    }
+
+    .schedule-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .schedule-left {}
+
+    .schedule-contact {
+      margin-top: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      color: rgba(255,255,255,0.8);
+      font-size: 0.9rem;
+    }
+
+    .contact-icon {
+      width: 40px;
+      height: 40px;
+      background: rgba(26,140,140,0.2);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .contact-item a {
+      color: var(--teal-light);
+      text-decoration: none;
+    }
+
+    .contact-item a:hover { text-decoration: underline; }
+
+    .calendly-container {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 32px 80px rgba(0,0,0,0.4);
+      min-height: 700px;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #060E18;
+      padding: 3rem 2rem;
+      border-top: 1px solid rgba(201,168,76,0.15);
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-name {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: white;
+      letter-spacing: 0.08em;
+    }
+
+    .footer-legal {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.4);
+      line-height: 1.6;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .footer-links a {
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      font-size: 0.82rem;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--teal-light); }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      .hero-content,
+      .focus-grid,
+      .about-grid,
+      .compare-grid,
+      .schedule-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-image-panel { display: none; }
+
+      .about-grid { grid-template-columns: 1fr; }
+      .about-photo-frame { max-width: 320px; margin: 0 auto 3rem; }
+
+      .seeking-highlight { grid-template-columns: 1fr 1fr; }
+
+      .footer-inner { grid-template-columns: 1fr; }
+      .footer-links { flex-wrap: wrap; }
+
+      .nav-links { display: none; }
+
+      .stats-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    }
+
+    @media (max-width: 600px) {
+      section { padding: 4rem 1.25rem; }
+      .seeking-highlight { grid-template-columns: 1fr; }
+    }
+
+    /* ─── SCROLL ANIMATIONS ─── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── NAV ─── -->
+  <nav>
+    <a href="#hero" class="nav-brand">
+      <img src="assets/images/panjas_logo_dark.png" alt="PANJAS Equity Holding, LLC" style="height:48px; width:auto; display:block;" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="#opportunity">The Opportunity</a></li>
+      <li><a href="#healthcare-focus">Healthcare Focus</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#seeking">What We Seek</a></li>
+      <li><a href="#schedule" class="nav-cta">Schedule a Call</a></li>
+    </ul>
+  </nav>
+
+  <!-- ─── HERO ─── -->
+  <section id="hero">
+    <div class="hero-bg-pattern"></div>
+    <div class="hero-grid-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-text">
+        <div class="hero-label">Healthcare Business Acquisitions</div>
+        <h1 class="hero-headline">
+          A Better Exit for<br />
+          <span>Healthcare Business</span><br />
+          Owners
+        </h1>
+        <p class="hero-sub">
+          PANJAS Equity Holding acquires healthcare businesses through a streamlined 30-day annuity sale process — no broker commissions, no invasive diligence, and a structure designed to maximize your financial outcome and protect your legacy.
+        </p>
+        <div class="hero-cta-group">
+          <a href="#schedule" class="btn-primary">
+            &#128197; Schedule a Confidential Call
+          </a>
+          <a href="#opportunity" class="btn-outline">
+            &#8595; Learn More
+          </a>
+        </div>
+      </div>
+      <div class="hero-image-panel">
+        <div class="hero-image-frame">
+          <img src="assets/images/healthcare_business.jpg" alt="Healthcare business professionals" />
+          <div class="hero-image-overlay"></div>
+        </div>
+        <div class="hero-stat-card top-left">
+          <div class="hero-stat-num">30</div>
+          <div class="hero-stat-label">Day close guarantee</div>
+        </div>
+        <div class="hero-stat-card bottom-right">
+          <div class="hero-stat-num">4–5×</div>
+          <div class="hero-stat-label">EBITDA multiples delivered</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── STATS BANNER ─── -->
+  <div id="stats-banner">
+    <div class="stats-grid">
+      <div class="stat-item fade-up">
+        <div class="stat-number">87%</div>
+        <div class="stat-title">Never Sell</div>
+        <div class="stat-desc">Healthcare businesses listed with brokers that fail to close</div>
+      </div>
+      <div class="stat-item fade-up" style="transition-delay:0.15s">
+        <div class="stat-number">4–6</div>
+        <div class="stat-title">Months Average</div>
+        <div class="stat-desc">Traditional sale timeline — often stretching to a year or more</div>
+      </div>
+      <div class="stat-item fade-up" style="transition-delay:0.3s">
+        <div class="stat-number">8–12%</div>
+        <div class="stat-title">Broker Commission</div>
+        <div class="stat-desc">Fees that erode your hard-earned proceeds before you see a dollar</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── OPPORTUNITY ─── -->
+  <section id="opportunity">
+    <div class="section-inner">
+      <div class="section-label">The Annuity Advantage</div>
+      <h2 class="section-headline">Seven Reasons Owners Choose<br />the PANJAS Annuity Sale</h2>
+      <p class="section-sub">Our acquisition model is built around your outcome — not a broker's commission. Every element of the process is designed to deliver more value, less friction, and lasting peace of mind.</p>
+      <div class="benefits-grid">
+        <div class="benefit-card fade-up">
+          <div class="benefit-icon">&#9989;</div>
+          <div class="benefit-title">Guaranteed Sale</div>
+          <p class="benefit-desc">Your business closes within 30 days of signing the LOI — or we open our network and make warm introductions to the top healthcare investment bankers in your sector. You have nothing to lose.</p>
+        </div>
+        <div class="benefit-card fade-up" style="transition-delay:0.1s">
+          <div class="benefit-icon">&#128200;</div>
+          <div class="benefit-title">Higher Sale Price</div>
+          <p class="benefit-desc">While the industry average for healthcare businesses sits at 2–3.5× EBITDA, our structure regularly delivers 4–5× multiples — because we remove risk from the acquisition and can pay a premium for certainty.</p>
+        </div>
+        <div class="benefit-card fade-up" style="transition-delay:0.2s">
+          <div class="benefit-icon">&#127963;</div>
+          <div class="benefit-title">Legacy Protection</div>
+          <p class="benefit-desc">Your employees, patients, and brand identity are protected through a structured transition plan. You may continue as Chairman Emeritus, staying connected to the community you built.</p>
+        </div>
+        <div class="benefit-card fade-up" style="transition-delay:0.3s">
+          <div class="benefit-icon">&#128176;</div>
+          <div class="benefit-title">Zero Broker Fees</div>
+          <p class="benefit-desc">No commissions. No retainers. No invasive data rooms or SOP documentation requirements. We accept your business as-is and handle the complexity on your behalf.</p>
+        </div>
+        <div class="benefit-card fade-up" style="transition-delay:0.1s">
+          <div class="benefit-icon">&#9201;</div>
+          <div class="benefit-title">30-Day Close</div>
+          <p class="benefit-desc">We compress months of traditional process into 30 days — protecting you from market shifts, buyer fatigue, and the operational disruption of a prolonged sale.</p>
+        </div>
+        <div class="benefit-card fade-up" style="transition-delay:0.2s">
+          <div class="benefit-icon">&#128203;</div>
+          <div class="benefit-title">Tax-Optimized Structure</div>
+          <p class="benefit-desc">Instead of a lump-sum payout that triggers a 15–20%+ capital gains event, our annuity structure spreads payments over time — deferring tax liability and maximizing your net proceeds.</p>
+        </div>
+        <div class="benefit-card fade-up" style="transition-delay:0.3s">
+          <div class="benefit-icon">&#127774;</div>
+          <div class="benefit-title">Lifestyle Preservation</div>
+          <p class="benefit-desc">A 10-year income stream, continued health coverage, and an advisory role ensure your life after the sale is as stable and purposeful as the one you built before it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── HEALTHCARE FOCUS ─── -->
+  <section id="healthcare-focus">
+    <div class="section-inner">
+      <div class="focus-grid">
+        <div class="focus-image-stack fade-up">
+          <img src="assets/images/healthcare_pe.jpg" alt="Healthcare private equity" class="focus-img-main" />
+          <img src="assets/images/healthcare_business.jpg" alt="Healthcare professionals" class="focus-img-accent" />
+        </div>
+        <div class="fade-up" style="transition-delay:0.2s">
+          <div class="section-label" style="color: var(--teal-light);">
+            <span style="background:var(--teal-light); width:24px; height:2px; display:inline-block;"></span>
+            Sector Expertise
+          </div>
+          <h2 class="section-headline light">Why Healthcare.<br />Why Now.</h2>
+          <p class="section-sub light">
+            The U.S. healthcare sector is in the midst of the largest consolidation wave in its history. Independent operators face mounting regulatory pressure, staffing costs, and reimbursement complexity — creating a generational window for physician-led acquirers who understand the business from the inside.
+          </p>
+          <p style="color:rgba(255,255,255,0.65); font-size:0.93rem; line-height:1.75; margin-bottom:2rem;">
+            PANJAS Equity Holding is led by a physician-executive with an MD, MBA, and MPH — uniquely positioned to evaluate clinical operations, financial performance, and strategic fit in a single conversation. We are not financial engineers applying a generic playbook. We are healthcare operators acquiring businesses we understand deeply.
+          </p>
+          <div class="focus-sectors">
+            <span class="sector-tag">Primary Care Clinics</span>
+            <span class="sector-tag">Urgent Care</span>
+            <span class="sector-tag">Home Health Agencies</span>
+            <span class="sector-tag">Revenue Cycle Management</span>
+            <span class="sector-tag">Behavioral Health</span>
+            <span class="sector-tag">Physical Therapy</span>
+            <span class="sector-tag">Specialty Practices</span>
+            <span class="sector-tag">Assisted Living</span>
+            <span class="sector-tag">Medical Billing</span>
+            <span class="sector-tag">Healthcare Staffing</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── COMPARISON ─── -->
+  <section id="comparison">
+    <div class="section-inner">
+      <div class="section-label">Side by Side</div>
+      <h2 class="section-headline">Traditional Sale vs.<br />The PANJAS Annuity Sale</h2>
+      <p class="section-sub">The difference is not incremental — it is structural. Every element of our process is designed to put more value in your hands, faster.</p>
+      <div class="compare-grid">
+        <div class="compare-card traditional fade-up">
+          <div class="compare-badge bad">&#10060; Traditional Broker Sale</div>
+          <div class="compare-title">The Old Way</div>
+          <ul class="compare-list">
+            <li>
+              <div class="compare-icon">✗</div>
+              <span>87% of listings never close — months of effort wasted</span>
+            </li>
+            <li>
+              <div class="compare-icon">✗</div>
+              <span>4–6+ month timeline, often stretching to 12 months</span>
+            </li>
+            <li>
+              <div class="compare-icon">✗</div>
+              <span>8–12% broker commission plus upfront retainers</span>
+            </li>
+            <li>
+              <div class="compare-icon">✗</div>
+              <span>Invasive due diligence: SOPs, audited financials, data rooms</span>
+            </li>
+            <li>
+              <div class="compare-icon">✗</div>
+              <span>Lump-sum payment triggers immediate 15–20%+ capital gains tax</span>
+            </li>
+            <li>
+              <div class="compare-icon">✗</div>
+              <span>2–3.5× EBITDA — industry average multiples</span>
+            </li>
+            <li>
+              <div class="compare-icon">✗</div>
+              <span>No income continuity, no advisory role, no legacy protection</span>
+            </li>
+          </ul>
+        </div>
+        <div class="compare-card panjas fade-up" style="transition-delay:0.15s">
+          <div class="compare-badge good">&#10003; PANJAS Annuity Sale</div>
+          <div class="compare-title">The PANJAS Way</div>
+          <ul class="compare-list">
+            <li>
+              <div class="compare-icon">✓</div>
+              <span>Guaranteed close within 30 days of LOI — or we make warm introductions</span>
+            </li>
+            <li>
+              <div class="compare-icon">✓</div>
+              <span>30-day process from first conversation to close</span>
+            </li>
+            <li>
+              <div class="compare-icon">✓</div>
+              <span>$0 broker fees — zero commissions, zero retainers</span>
+            </li>
+            <li>
+              <div class="compare-icon">✓</div>
+              <span>We accept your business as-is — no documentation burden</span>
+            </li>
+            <li>
+              <div class="compare-icon">✓</div>
+              <span>Annuity structure spreads payments over time — tax-optimized</span>
+            </li>
+            <li>
+              <div class="compare-icon">✓</div>
+              <span>4–5× EBITDA multiples — premium valuations for certainty</span>
+            </li>
+            <li>
+              <div class="compare-icon">✓</div>
+              <span>10-year income stream, health coverage, Chairman Emeritus role</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── ABOUT ─── -->
+  <section id="about">
+    <div class="section-inner">
+      <div class="about-grid">
+        <div class="about-photo-frame fade-up">
+          <img src="assets/images/dr_russell.png" alt="Dr. Anthony W. Russell, MD MBA MPH" />
+          <div class="about-credential-bar">
+            <div class="about-credential-dot"></div>
+            <div class="about-credential-text">
+              <strong>Dr. Anthony W. Russell</strong>
+              Physician · Executive · Acquirer
+            </div>
+          </div>
+        </div>
+        <div class="about-content fade-up" style="transition-delay:0.2s">
+          <div class="section-label">The Acquirer</div>
+          <div class="about-name">Dr. Anthony W. Russell</div>
+          <div class="about-title-line">MD · MBA · MPH &nbsp;|&nbsp; Founder &amp; Principal, PANJAS Equity Holding, LLC</div>
+          <p class="about-bio">
+            PANJAS Equity Holding is led by a physician-executive who has spent his career at the intersection of clinical medicine, business strategy, and healthcare operations. With advanced degrees in medicine, business administration, and public health, Dr. Russell brings a perspective that no traditional private equity firm can replicate: the ability to evaluate a healthcare business from the inside out.
+          </p>
+          <p class="about-bio">
+            This is not a financial firm that acquired healthcare expertise. This is a healthcare operator who built the financial and strategic capability to acquire, grow, and steward the businesses that deliver care to communities. PANJAS Equity Holding is a Wyoming-registered private holding company focused exclusively on healthcare sector acquisitions.
+          </p>
+          <div class="about-creds">
+            <span class="cred-badge">MD</span>
+            <span class="cred-badge">MBA</span>
+            <span class="cred-badge">MPH</span>
+            <span class="cred-badge">Physician Executive</span>
+            <span class="cred-badge">Healthcare Operator</span>
+            <span class="cred-badge">Wyoming LLC</span>
+          </div>
+          <div class="about-links">
+            <a href="http://linkedin.com/in/anthonywrussell" target="_blank" rel="noopener" class="linkedin-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              Connect on LinkedIn
+            </a>
+            <a href="#schedule" class="btn-primary">Schedule a Call</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── WHAT WE SEEK ─── -->
+  <section id="seeking">
+    <div class="section-inner">
+      <div class="section-label">Acquisition Criteria</div>
+      <h2 class="section-headline">What We Are Seeking</h2>
+      <p class="section-sub">PANJAS Equity Holding is actively acquiring healthcare businesses that meet the following profile. If your business fits — or is close — we encourage you to reach out. We move quickly and confidentially.</p>
+      <div class="seeking-grid">
+        <div class="seeking-card fade-up">
+          <div class="seeking-icon">&#127973;</div>
+          <div class="seeking-title">Business Type</div>
+          <p class="seeking-desc">Independent healthcare businesses including clinics, home health agencies, behavioral health practices, revenue cycle management firms, medical billing companies, and healthcare staffing organizations.</p>
+        </div>
+        <div class="seeking-card fade-up" style="transition-delay:0.1s">
+          <div class="seeking-icon">&#128181;</div>
+          <div class="seeking-title">Revenue Range</div>
+          <p class="seeking-desc">Businesses generating $500K to $10M in annual revenue. We are particularly interested in businesses with consistent cash flow and a clear patient or client base — not necessarily rapid growth.</p>
+        </div>
+        <div class="seeking-card fade-up" style="transition-delay:0.2s">
+          <div class="seeking-icon">&#128205;</div>
+          <div class="seeking-title">Geography</div>
+          <p class="seeking-desc">Primarily focused on the United States, with particular interest in markets experiencing healthcare consolidation pressure — including California, Texas, Florida, and the Southeast.</p>
+        </div>
+        <div class="seeking-card fade-up" style="transition-delay:0.3s">
+          <div class="seeking-icon">&#128101;</div>
+          <div class="seeking-title">Ownership Profile</div>
+          <p class="seeking-desc">Owner-operated businesses where the founder is approaching retirement, facing burnout, or seeking liquidity without the disruption of a traditional broker-led sale process.</p>
+        </div>
+        <div class="seeking-card fade-up" style="transition-delay:0.1s">
+          <div class="seeking-icon">&#128337;</div>
+          <div class="seeking-title">Timeline</div>
+          <p class="seeking-desc">Owners who want to move decisively. Our process is designed for business owners who value certainty and speed over a prolonged negotiation — we close in 30 days from LOI.</p>
+        </div>
+        <div class="seeking-card fade-up" style="transition-delay:0.2s">
+          <div class="seeking-icon">&#129309;</div>
+          <div class="seeking-title">Legacy Mindset</div>
+          <p class="seeking-desc">Owners who care about what happens to their employees, patients, and brand after the sale. We are stewards, not strippers. Your legacy matters to us as much as it does to you.</p>
+        </div>
+      </div>
+      <div class="seeking-highlight fade-up">
+        <div class="sh-item">
+          <div class="sh-value">30 Days</div>
+          <div class="sh-label">From LOI to close</div>
+        </div>
+        <div class="sh-item">
+          <div class="sh-value">$0</div>
+          <div class="sh-label">Broker fees or commissions</div>
+        </div>
+        <div class="sh-item">
+          <div class="sh-value">10 Years</div>
+          <div class="sh-label">Annuity income stream</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SCHEDULE ─── -->
+  <section id="schedule">
+    <div class="section-inner schedule-inner">
+      <div class="schedule-grid">
+        <div class="schedule-left fade-up">
+          <div class="section-label" style="color:var(--teal-light);">
+            <span style="background:var(--teal-light); width:24px; height:2px; display:inline-block;"></span>
+            Start the Conversation
+          </div>
+          <h2 class="section-headline light">Ready to Explore<br />Your Options?</h2>
+          <p class="section-sub light">
+            This opportunity is not for everyone. If you are willing to settle for a lower valuation and a long, tedious process, our Annuity Sale is not for you — and that is okay.
+          </p>
+          <p style="color:rgba(255,255,255,0.65); font-size:0.93rem; line-height:1.75; margin-bottom:2rem;">
+            But if a guaranteed close, a premium valuation, zero broker fees, and a structure that protects your income and legacy sounds like what you deserve — we encourage you to schedule a confidential 15 or 30-minute conversation. There is no obligation, no pressure, and nothing to lose.
+          </p>
+          <div class="schedule-contact">
+            <div class="contact-item">
+              <div class="contact-icon">&#128231;</div>
+              <span><a href="mailto:PANJAS.LLC@gmail.com">PANJAS.LLC@gmail.com</a></span>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">&#128222;</div>
+              <span><a href="tel:9167999640">916-799-9640</a></span>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#22AAAA"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              </div>
+              <span><a href="http://linkedin.com/in/anthonywrussell" target="_blank" rel="noopener">linkedin.com/in/anthonywrussell</a></span>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">&#127968;</div>
+              <span style="color:rgba(255,255,255,0.6); font-size:0.82rem;">PANJAS Equity Holding, LLC<br />Wyoming Registered Company</span>
+            </div>
+          </div>
+        </div>
+        <div class="fade-up" style="transition-delay:0.2s">
+          <div class="calendly-container">
+            <div class="calendly-inline-widget"
+              data-url="https://calendly.com/panjas-llc/meet-with-dr-anthony-russell?hide_gdpr_banner=1&primary_color=1a8c8c"
+              style="min-width:320px;height:700px;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ─── -->
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">
+          <img src="assets/images/panjas_logo_dark.png" alt="PANJAS Equity Holding, LLC" style="height:40px; width:auto;" />
+          <span class="footer-name">PANJAS Equity Holding, LLC</span>
+        </div>
+        <div class="footer-legal">
+          Wyoming Registered Company &nbsp;|&nbsp; panjas.org &nbsp;|&nbsp; PANJAS.LLC@gmail.com &nbsp;|&nbsp; 916-799-9640<br />
+          &copy; 2026 PANJAS Equity Holding, LLC. All rights reserved. This website is for informational purposes only and does not constitute an offer to sell or a solicitation of an offer to buy any securities.
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="#opportunity">Opportunity</a>
+        <a href="#healthcare-focus">Healthcare Focus</a>
+        <a href="#about">About</a>
+        <a href="#seeking">Criteria</a>
+        <a href="#schedule">Contact</a>
+        <a href="http://linkedin.com/in/anthonywrussell" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ─── SCRIPTS ─── -->
+  <script async src="https://assets.calendly.com/assets/external/widget.js"></script>
+  <script>
+    // Scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    // Nav active state
+    const sections = document.querySelectorAll('section[id], div[id]');
+    const navLinks = document.querySelectorAll('.nav-links a');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        if (window.scrollY >= sectionTop) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.style.color = '';
+        if (link.getAttribute('href') === '#' + current) {
+          link.style.color = 'var(--gold)';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
